@@ -1,5 +1,5 @@
 # APT for [Gentoo Linux](https://gentoo.org/)
-A Python program, made for Gentoo Linux that uses emerge to install packages, but has an interface similar to the APT package manager from Debian Linux.
+A Python program, made for Gentoo Linux that uses emerge to install packages, but has an interface similar to the APT package manager from Debian Linux
 
 > Currently doesn't support the -y or --assume-yes flags
 
@@ -48,9 +48,9 @@ Run this command in the terminal of your choice:
 rm -rfv ~/apt.py
 ```
 
-Now find this line and remove it in ```~/.bashrc``` and ```~/.profile```, or which ever file you used to install APT:
+Now find this line and remove it in ```~/.bashrc``` or ```~/.profile``` (Which ever file you used to install APT):
 
-(If the line doesn't exist in a file then you can ignore it and/or go to the next one.)
+> If the line doesn't exist in the file then APT might already be uninstalled
 
 ```
 alias apt="python3 -ub ~/apt.py"
