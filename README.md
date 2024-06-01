@@ -55,3 +55,17 @@ Now find this line and remove it in ```~/.bashrc``` or ```~/.profile``` (Which e
 ```
 alias apt="python3 -ub ~/apt.py"
 ```
+
+### Help text
+
+```
+usage: apt [--help] [--sync] [-h?] ...
+--help, -h, -?:      display help text
+--sync:              run "emerge --sync"
+install:             install package
+remove, autoremove:  remove package
+update:              update package
+upgrade:             upgrade package
+config-update:       update configuration files
+unmask:              unmask a package (no arguments)
+```
