@@ -56,7 +56,7 @@ Now find this line and remove it in ```~/.bashrc``` or ```~/.profile``` (Which e
 alias apt="python3 -ub ~/apt.py"
 ```
 
-### Help text
+### Help text:
 
 ```
 usage: apt [--help] [--sync] [-h?] ...
