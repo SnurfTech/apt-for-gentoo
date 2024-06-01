@@ -1,38 +1,33 @@
-# Node.js for iOS/iPadOS [a-Shell](https://holzschu.github.io/a-Shell_iOS)
-A [Node.js](https://nodejs.org)-like program that I coded for iOS/iPadOS a-Shell. It uses the jsc command, and it includes a fake [NVM](https://github.com/nvm-sh/nvm) (Node Version Manager).
-
-Coded in Python.
+# APT for [Gentoo Linux](https://gentoo.org/)
+A Python program, made for Gentoo Linux that uses emerge to install packages, but has an interface similar to the APT package manager from Debian Linux. 
 
 ### Install:
 
 Install dependencies:
 
 ```
-pip install colorama
+emerge dev-python/colorama
 ```
 
-Run these commands in a-Shell:
+Run these commands in the terminal of your choice:
 
 ```
-mkdir -p ~/Documents/.nvm/bin
-curl https://github.com/XRG2014/Node.js-a-Shell/blob/main/.nvm/bin/nvm.py -o ~/Documents/.nvm/bin/nvm.py
-curl https://github.com/XRG2014/Node.js-a-Shell/blob/main/.nvm/bin/node.py -o ~/Documents/.nvm/bin/node.py
+cd ~
+wget https://github.com/XRG2014/apt-for-gentoo/blob/main/apt.py
 ```
 
-Now run **ONLY ONE PAIR** of commands shown below:
+Now run **ONLY ONE** of commands shown below:
 
-> _This one uses ```~/Documents/.bashrc```_:
-
-```
-echo 'alias nvm="python3 -ub ~/Documents/.nvm/bin/nvm.py"' | tee -a ~/Documents/.bashrc
-echo 'alias node="python3 -ub ~/Documents/.nvm/bin/node.py"' | tee -a ~/Documents/.bashrc
-```
-
-> _This one uses ```~/Documents/.profile```_:
+> _This one uses ```~/.bashrc```_:
 
 ```
-echo 'alias nvm="python3 -ub ~/Documents/.nvm/bin/nvm.py"' | tee -a ~/Documents/.profile
-echo 'alias node="python3 -ub ~/Documents/.nvm/bin/node.py"' | tee -a ~/Documents/.profile
+echo 'alias apt="python3 -ub ~/apt.py"' | tee -a ~/.bashrc
+```
+
+> _This one uses ```~/.profile```_:
+
+```
+echo 'alias apt="python3 -ub ~/apt.py"' | tee -a ~/.profile
 ```
 
 ### Uninstall:
@@ -40,20 +35,19 @@ echo 'alias node="python3 -ub ~/Documents/.nvm/bin/node.py"' | tee -a ~/Document
 (optional) Uninstall dependencies:
 
 ```
-pip uninstall colorama
+emerge -Cv dev-python/colorama
 ```
 
-Run this command in a-Shell:
+Run this command in the terminal of your choice:
 
 ```
-rm -rfv ~/Documents/.nvm
+rm -rfv ~/apt.py
 ```
 
-Now find these lines and remove them in ```~/Documents/.bashrc``` and ```~/Documents/.profile```, or which ever one you used to install Node.js:
+Now find this line and remove it in ```~/Documents/.bashrc``` and ```~/Documents/.profile```, or which ever file you used to install APT:
 
-(If the lines don't exist in a file then you can ignore it and go to the next one.)
+(If the line doesn't exist in a file then you can ignore it and/or go to the next one.)
 
 ```
-alias nvm="python3 -ub ~/Documents/.nvm/bin/nvm.py"
-alias node="python3 -ub ~/Documents/.nvm/bin/node.py"
+alias apt="python3 -ub ~/apt.py"
 ```
