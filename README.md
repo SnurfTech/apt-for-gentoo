@@ -3,6 +3,8 @@ A Python program, made for Gentoo Linux that uses emerge to install packages, bu
 
 > Currently doesn't support the -y or --assume-yes flags
 
+> Please note that this is not an official release of APT, and that it may not incude every feature
+
 ### Install:
 
 Install dependencies:
