@@ -48,7 +48,7 @@ Run this command in the terminal of your choice:
 rm -rfv ~/apt.py
 ```
 
-Now find this line and remove it in ```~/Documents/.bashrc``` and ```~/Documents/.profile```, or which ever file you used to install APT:
+Now find this line and remove it in ```~/.bashrc``` and ```~/.profile```, or which ever file you used to install APT:
 
 (If the line doesn't exist in a file then you can ignore it and/or go to the next one.)
 
