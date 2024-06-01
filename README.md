@@ -1,5 +1,7 @@
 # APT for [Gentoo Linux](https://gentoo.org/)
-A Python program, made for Gentoo Linux that uses emerge to install packages, but has an interface similar to the APT package manager from Debian Linux. 
+A Python program, made for Gentoo Linux that uses emerge to install packages, but has an interface similar to the APT package manager from Debian Linux.
+
+> Currently doesn't support the -y or --assume-yes flags
 
 ### Install:
 
