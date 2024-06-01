@@ -1,0 +1,70 @@
+import sys
+import os
+import time
+from colorama import Fore
+
+n = len(sys.argv)
+
+def ht():
+    print("usage: apt [--help] [--sync] [-h?] ...")
+    print("--help, -h, -?:      display help text")
+    print('--sync:              run "emerge --sync"')
+    print("install:             install package")
+    print("remove, autoremove:  remove package")
+    print("update:              update package")
+    print("upgrade:             upgrade package")
+    print("config-update:       update configuration files")
+    print("unmask:              unmask a package (no arguments)")
+def in1():
+    print(f'{Fore.LIGHTRED_EX}Error:{Fore.RESET} not enough arguments')
+    ht()
+    sys.exit()
+def in2():
+    print(f'{Fore.LIGHTRED_EX}Error:{Fore.RESET} too many arguments.')
+    ht()
+    sys.exit()
+try:
+    if sys.argv[1] == "-?" or sys.argv[1] == "-h" or sys.argv[1] == "--help":
+        ht()
+        sys.exit()
+    elif sys.argv[1] == "install":
+        if not n >= 3:
+            in1()
+        for i in range(2, n):
+            os.system(f'sudo emerge --verbose --ask {sys.argv[i]}')
+    elif sys.argv[1] == "remove" or sys.argv[1] == "autoremove":
+        if not n >= 3:
+            in1()
+        for i in range(2, n):
+            os.system(f'sudo emerge --ask -Cv {sys.argv[i]}')
+    elif sys.argv[1] == "update":
+        if not n >= 3:
+            os.system("sudo emerge --ask --verbose --deep --update @world")
+            sys.exit()
+        for i in range(2, n):
+            os.system(f'sudo emerge --ask --verbose --deep --update {sys.argv[i]}')
+    elif sys.argv[1] == "upgrade":
+        if not n >= 3:
+            os.system("sudo emerge --ask --verbose --changed-use --newuse --deep --update @world")
+            sys.exit()
+        for i in range(2, n):
+            os.system(f'sudo emerge --ask --verbose --changed-use --new-use --deep --update {sys.argv[i]}')
+    elif sys.argv[1] == "config-update":
+        if n >= 3:
+            in2()
+        os.system("sudo etc-update")
+    elif sys.argv[1] == "--sync":
+        if n >= 3:
+            in2()
+        os.system("sudo emerge --sync")
+    elif sys.argv[1] == "unmask":
+        if n >= 3:
+            in2()
+        os.system("sudo vim /etc/portage/package.accept_keywords")
+    else:
+        print(f'{Fore.LIGHTRED_EX}Error:{Fore.RESET} invalid argument')
+        ht()
+        sys.exit()
+except IndexError:
+    ht()
+    sys.exit()
