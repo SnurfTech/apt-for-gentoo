@@ -5,6 +5,12 @@ A Python program, made for Gentoo Linux that uses emerge to install packages, bu
 
 > Please note that this is not an official release of APT, and that this program may not include every feature
 
+## Table of Contents:
+
+- [Install](/#install)
+- [Uninstall](/#uninstall)
+- [Help Text](/#help-text)
+
 ### Install:
 
 Install dependencies:
