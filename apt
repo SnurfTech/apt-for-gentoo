@@ -7,13 +7,16 @@ from colorama import Fore
 n = len(sys.argv)
 
 def ht():
-    print("usage: apt [--help] [--sync] [-h?] ...")
+    print("usage: apt [--help] [-h?] ...")
     print("--help, -h, -?:      display help text")
     print("install:             install package")
     print("remove, autoremove:  remove package")
+    print("show:                show details and information about a package")
     print("update:              update repositories and ebuilds")
     print("upgrade:             upgrade package or everything")
-    print("config-update:       update configuration files")
+    print("full-upgrade:        upgrade everything with no restrictions")
+    print("search, list:        search for a package using keyword")
+    print("satify:              update configuration files")
     print("unmask:              unmask a package (no arguments)")
 def in1():
     print(f'{Fore.LIGHTRED_EX}Error:{Fore.RESET} not enough arguments')
@@ -27,16 +30,26 @@ try:
     if sys.argv[1] == "-?" or sys.argv[1] == "-h" or sys.argv[1] == "--help":
         ht()
         sys.exit()
+    elif sys.argv[1] == "search" or sys.argv[1] == "list":
+        if not n >= 4:
+            in1()
+        os.system(f'sudo emerge --search {sys.argv[1]}')
+    elif sys.argv[1] == "show":
+        if not n >= 4:
+            in1()
+        os.system(f'sudo emerge --info {sys.argv[1]}')
     elif sys.argv[1] == "install":
         if not n >= 3:
             in1()
         for i in range(2, n):
             os.system(f'sudo emerge --verbose --ask -n {sys.argv[i]}')
+    elif sys.argv[1] == "reinstall":
     elif sys.argv[1] == "remove" or sys.argv[1] == "autoremove":
         if not n >= 3:
             in1()
         for i in range(2, n):
             os.system(f'sudo emerge --ask -Cv {sys.argv[i]}')
+            sys.exit()
     elif sys.argv[1] == "update":
         if not n >= 3:
             os.system("sudo emerge --verbose --ask --sync -n")
@@ -45,14 +58,21 @@ try:
             in2()
     elif sys.argv[1] == "upgrade":
         if not n >= 3:
-            os.system("sudo emerge --ask --verbose --changed-use -n --deep --update @world")
+            os.system("sudo emerge --ask --verbose --changed-use -n --deep --update @installed")
             sys.exit()
         for i in range(2, n):
             os.system(f'sudo emerge --ask --verbose --changed-use -n --deep --update {sys.argv[i]}')
-    elif sys.argv[1] == "config-update":
+    elif sys.argv[1] == "full-upgrade":
+        if not n >= 3:
+            os.system(f'sudo emerge --ask --verbose --changed-use --deep --prune --update @installed')
+            sys.exit()
+        if n >= 2:
+            in2()
+    elif sys.argv[1] == "satify":
         if n >= 3:
             in2()
         os.system("sudo etc-update")
+        sys.exit()
     elif sys.argv[1] == "unmask":
         if n >= 3:
             in2()
