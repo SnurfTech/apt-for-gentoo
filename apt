@@ -11,8 +11,8 @@ def ht():
     print("--help, -h, -?:      display help text")
     print("install:             install package")
     print("remove, autoremove:  remove package")
-    print("update:              update package")
-    print("upgrade:             upgrade package")
+    print("update:              update repositories and ebuilds")
+    print("upgrade:             upgrade package or everything")
     print("config-update:       update configuration files")
     print("unmask:              unmask a package (no arguments)")
 def in1():
