@@ -16,14 +16,14 @@ A Python program, made for Gentoo Linux that uses emerge to install packages, bu
 Install dependencies:
 
 ```
-emerge -n wget curl dev-python/colorama python3
+emerge -n curl dev-python/colorama python3
 ```
 
 Run these commands:
 
 ```
 cd /usr/bin
-sudo wget https://github.com/XRG2014/apt-for-gentoo/blob/main/apt
+sudo curl https://github.com/XRG2014/apt-for-gentoo/blob/main/apt -o apt
 sudo curl https://github.com/XRG2014/apt-for-gentoo/blob/main/apt -o apt-get
 sudo chmod +x apt
 sudo chmod +x apt-get
@@ -34,13 +34,14 @@ sudo chmod +x apt-get
 (optional) Uninstall dependencies:
 
 ```
-emerge -Cvn wget curl dev-python/colorama python3
+emerge -Cv curl dev-python/colorama python3
 ```
 
 Run this command:
 
 ```
-sudo rm -rfv ~/apt.py
+sudo rm -rfv /usr/bin/apt
+sudo rm -rfv /usr/bin/apt-get
 ```
 
 ### Help Text:
