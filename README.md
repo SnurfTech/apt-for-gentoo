@@ -23,8 +23,8 @@ Run these commands:
 
 ```
 cd /usr/bin
-sudo curl https://github.com/XRG2014/apt-for-gentoo/blob/main/apt -o apt
-sudo curl https://github.com/XRG2014/apt-for-gentoo/blob/main/apt -o apt-get
+sudo curl https://raw.githubusercontent.com/XRG2014/apt-for-gentoo/main/apt -o apt
+sudo curl https://raw.githubusercontent.com/XRG2014/apt-for-gentoo/main/apt -o apt-get
 sudo chmod +x apt
 sudo chmod +x apt-get
 ```
