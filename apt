@@ -36,7 +36,7 @@ try:
         if not n >= 3:
             in1()
         for i in range(2, n):
-            os.system(f'sudo emerge --ask -Cvn {sys.argv[i]}')
+            os.system(f'sudo emerge --ask -Cv {sys.argv[i]}')
     elif sys.argv[1] == "update":
         if not n >= 3:
             os.system("sudo emerge --verbose --ask --sync -n")
