@@ -49,11 +49,10 @@ sudo rm -rfv /usr/bin/apt-get
 ```
 usage: apt [--help] [--sync] [-h?] ...
 --help, -h, -?:      display help text
---sync:              run "emerge --sync"
 install:             install package
 remove, autoremove:  remove package
-update:              update package
-upgrade:             upgrade package
+update:              update repositories and ebuilds
+upgrade:             upgrade package or everything
 config-update:       update configuration files
 unmask:              unmask a package (no arguments)
 ```
