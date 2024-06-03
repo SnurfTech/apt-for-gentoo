@@ -16,28 +16,17 @@ A Python program, made for Gentoo Linux that uses emerge to install packages, bu
 Install dependencies:
 
 ```
-emerge dev-python/colorama
+emerge -n wget curl dev-python/colorama python3
 ```
 
-Run these commands in the terminal of your choice:
+Run these commands:
 
 ```
-cd ~
-wget https://github.com/XRG2014/apt-for-gentoo/blob/main/apt.py
-```
-
-Now run **ONLY ONE** of commands shown below:
-
-> _This one uses ```~/.bashrc```_:
-
-```
-echo 'alias apt="python3 -ub ~/apt.py"' | tee -a ~/.bashrc
-```
-
-> _This one uses ```~/.profile```_:
-
-```
-echo 'alias apt="python3 -ub ~/apt.py"' | tee -a ~/.profile
+cd /usr/bin
+sudo wget https://github.com/XRG2014/apt-for-gentoo/blob/main/apt
+sudo curl https://github.com/XRG2014/apt-for-gentoo/blob/main/apt -o apt-get
+sudo chmod +x apt
+sudo chmod +x apt-get
 ```
 
 ### Uninstall:
@@ -45,21 +34,13 @@ echo 'alias apt="python3 -ub ~/apt.py"' | tee -a ~/.profile
 (optional) Uninstall dependencies:
 
 ```
-emerge -Cv dev-python/colorama
+emerge -Cvn wget curl dev-python/colorama python3
 ```
 
-Run this command in the terminal of your choice:
+Run this command:
 
 ```
-rm -rfv ~/apt.py
-```
-
-Now find this line and remove it in ```~/.bashrc``` or ```~/.profile``` (Which ever file you used to install APT):
-
-> If the line doesn't exist in the file then APT might already be uninstalled
-
-```
-alias apt="python3 -ub ~/apt.py"
+sudo rm -rfv ~/apt.py
 ```
 
 ### Help Text:
