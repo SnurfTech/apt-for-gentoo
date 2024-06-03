@@ -29,15 +29,25 @@ sudo chmod +x apt
 sudo chmod +x apt-get
 ```
 
+(optional) Uninstall curl:
+
+> Curl is no longer needed
+
+```
+emerge -Cv curl
+```
+
 ### Uninstall:
 
 (optional) Uninstall dependencies:
+
+> Assuming you don't have curl uninstalled (If you do, then just remove the phrase "curl" from the command below) 
 
 ```
 emerge -Cv curl dev-python/colorama python3
 ```
 
-Run this command:
+Run these commands:
 
 ```
 sudo rm -rfv /usr/bin/apt
