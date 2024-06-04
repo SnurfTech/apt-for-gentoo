@@ -3,7 +3,7 @@ A Python program, made for Gentoo Linux that uses emerge to install packages, bu
 
 > Currently doesn't support the -y or --assume-yes flags, but does include the "unmask" option, which allows you to unmask a package by using vim to open /etc/portage/package.accept_keywords (If you're unsure on how to use this option, then don't use it) 
 
-> Please note that this is not an official release of APT, and that this program may not include every feature and some of them may be changed or tweaked
+> Please note that this is not an official release of APT, and that this program may not include every feature and some may be changed or tweaked
 
 ## Table of Contents:
 
