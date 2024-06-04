@@ -1,7 +1,7 @@
 # APT for [Gentoo Linux](https://gentoo.org/)
 A Python program, made for Gentoo Linux that uses emerge to install packages, but has an interface similar to the APT package manager from Debian Linux
 
-> Currently doesn't support the -y or --assume-yes flags, but does include the "unmask" flag, which allows you to unmask a package by using vim to open /etc/portage
+> Currently doesn't support the -y or --assume-yes flags, but does include the "unmask" flag, which allows you to unmask a package by using vim to open /etc/portage/package.accept_keywords
 
 > Please note that this is not an official release of APT, and that this program may not include every feature
 
