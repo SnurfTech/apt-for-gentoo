@@ -40,7 +40,11 @@ try:
         if not n >= 3:
             in1()
         for i range(2, n):
-            os.system(f'sudo emerge --info {sys.argv[i]}')
+            num = 2
+            while num < n:
+                os.system(f'sudo emerge --info {sys.argv[num]}')
+                num + 1 = num
+            sys.exit()
     elif sys.argv[1] == "install":
         if not n >= 3:
             in1()
