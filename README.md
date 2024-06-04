@@ -57,12 +57,15 @@ sudo rm -rfv /usr/bin/apt-get
 ### Help Text:
 
 ```
-usage: apt [--help] [--sync] [-h?] ...
+usage: apt [--help] [-h?] ...
 --help, -h, -?:      display help text
 install:             install package
 remove, autoremove:  remove package
+show:                show details and information about a package
 update:              update repositories and ebuilds
 upgrade:             upgrade package or everything
-config-update:       update configuration files
-unmask:              unmask a package (no arguments)
+full-upgrade:        upgrade everything with no restrictions
+search, list:        search for a package using keyword
+satify:              update configuration files
+unmask:              unmask a package (This option doesn't support arguments, and if your unsure on how to use it, then don't)
 ```
