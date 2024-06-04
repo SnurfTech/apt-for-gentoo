@@ -43,7 +43,7 @@ try:
             num = 2
             while num < n:
                 os.system(f'sudo emerge --info {sys.argv[num]}')
-                num + 1 = num
+                num = num + 1
             sys.exit()
     elif sys.argv[1] == "install":
         if not n >= 3:
