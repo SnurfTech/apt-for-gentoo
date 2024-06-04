@@ -17,7 +17,7 @@ def ht():
     print("full-upgrade:        upgrade everything with no restrictions")
     print("search, list:        search for a package using keyword")
     print("satify:              update configuration files")
-    print("unmask:              unmask a package (no arguments)")
+    print("unmask:              unmask a package (no arguments, and if your unsure how to use this option, then don't use it)")
 def in1():
     print(f'{Fore.LIGHTRED_EX}Error:{Fore.RESET} not enough arguments')
     ht()
