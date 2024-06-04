@@ -34,7 +34,7 @@ try:
     elif sys.argv[1] == "search" or sys.argv[1] == "list":
         if not n >= 3:
             in1()
-        for i range(2, n):
+        for i in range(2, n):
             os.system(f'sudo emerge --search {sys.argv[i]}')
     elif sys.argv[1] == "show":
         if not n >= 3:
