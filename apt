@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 import sys
-import os
-import time
+from os import system
 from colorama import Fore
 
 n = len(sys.argv)
@@ -35,63 +34,63 @@ try:
         if not n >= 3:
             in1()
         for i in range(2, n):
-            os.system(f'sudo emerge --search {sys.argv[i]}')
+            system(f'sudo emerge --search {sys.argv[i]}')
     elif sys.argv[1] == "show":
         if not n >= 3:
             in1()
         for i in range(2, n):
             num = 2
             while num < n:
-                os.system(f'sudo emerge --info {sys.argv[num]}')
+                system(f'sudo emerge --info {sys.argv[num]}')
                 num = num + 1
             sys.exit()
     elif sys.argv[1] == "install":
         if not n >= 3:
             in1()
         for i in range(2, n):
-            os.system(f'sudo emerge --verbose --ask -n {sys.argv[i]}')
+            system(f'sudo emerge --verbose --ask -n {sys.argv[i]}')
     elif sys.argv[1] == "reinstall":
         if not n >= 3:
             in1()
         for i in range(2, n):
-            os.system(f'sudo emerge --ask -Cv {sys.argv[i]}')
-            os.system(f'sudo emerge --ask --verbose {sys.argv[i]}')
+            system(f'sudo emerge --ask -Cv {sys.argv[i]}')
+            system(f'sudo emerge --ask --verbose {sys.argv[i]}')
             sys.exit()
     elif sys.argv[1] == "remove" or sys.argv[1] == "autoremove":
         if not n >= 3 and sys.argv[1] == "autoremove":
-            os.system(f'sudo emerge --ask --verbose --prune @installed')
+            system(f'sudo emerge --ask --verbose --prune @installed')
         elif not n>= 3 and sys.argv[1] == "remove":
             in1()
         for i in range(2, n):
-            os.system(f'sudo emerge --ask -Cv {sys.argv[i]}')
+            system(f'sudo emerge --ask -Cv {sys.argv[i]}')
             sys.exit()
     elif sys.argv[1] == "update":
         if not n >= 3:
-            os.system("sudo emerge --verbose --ask --sync -n")
+            system("sudo emerge --verbose --ask --sync -n")
             sys.exit()
         if n >= 2:
             in2()
     elif sys.argv[1] == "upgrade":
         if not n >= 3:
-            os.system("sudo emerge --ask --verbose --changed-use -n --deep --update @installed")
+            system("sudo emerge --ask --verbose --changed-use -n --deep --update @installed")
             sys.exit()
         for i in range(2, n):
-            os.system(f'sudo emerge --ask --verbose --changed-use -n --deep --update {sys.argv[i]}')
+            system(f'sudo emerge --ask --verbose --changed-use -n --deep --update {sys.argv[i]}')
     elif sys.argv[1] == "full-upgrade":
         if not n >= 3:
-            os.system(f'sudo emerge --ask --verbose --changed-use --deep --prune --update @installed')
+            system(f'sudo emerge --ask --verbose --changed-use --deep --prune --update @installed')
             sys.exit()
         if n >= 2:
             in2()
     elif sys.argv[1] == "satify":
         if n >= 3:
             in2()
-        os.system("sudo etc-update")
+        system("sudo etc-update")
         sys.exit()
     elif sys.argv[1] == "unmask":
         if n >= 3:
             in2()
-        os.system("sudo vim /etc/portage/package.accept_keywords")
+        system("sudo vim /etc/portage/package.accept_keywords")
     else:
         print(f'{Fore.LIGHTRED_EX}Error:{Fore.RESET} invalid argument')
         ht()
