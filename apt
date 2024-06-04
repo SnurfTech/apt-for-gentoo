@@ -10,7 +10,8 @@ def ht():
     print("usage: apt [--help] [-h?] ...")
     print("--help, -h, -?:      display help text")
     print("install:             install package")
-    print("remove, autoremove:  remove package")
+    print("remove:              remove package")
+    print("autoremove:          remove package, and if no additional arguments are given, autoremove will uninstall older versions of packages that already have newer versions installed")
     print("show:                show details and information about a package")
     print("update:              update repositories and ebuilds")
     print("upgrade:             upgrade package or everything")
@@ -31,12 +32,12 @@ try:
         ht()
         sys.exit()
     elif sys.argv[1] == "search" or sys.argv[1] == "list":
-        if not n >= 3:
-            in2()
+        if not n >= 4:
+            in1()
         os.system(f'sudo emerge --search {sys.argv[1]}')
     elif sys.argv[1] == "show":
-        if not n >= 3:
-            in2()
+        if not n >= 4:
+            in1()
         os.system(f'sudo emerge --info {sys.argv[1]}')
     elif sys.argv[1] == "install":
         if not n >= 3:
