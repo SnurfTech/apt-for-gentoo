@@ -32,13 +32,13 @@ try:
         ht()
         sys.exit()
     elif sys.argv[1] == "search" or sys.argv[1] == "list":
-        if not n >= 4:
+        if not n >= 3:
             in1()
-        os.system(f'sudo emerge --search {sys.argv[1]}')
+        os.system(f'sudo emerge --search {sys.argv[2]}')
     elif sys.argv[1] == "show":
-        if not n >= 4:
+        if not n >= 3:
             in1()
-        os.system(f'sudo emerge --info {sys.argv[1]}')
+        os.system(f'sudo emerge --info {sys.argv[2]}')
     elif sys.argv[1] == "install":
         if not n >= 3:
             in1()
