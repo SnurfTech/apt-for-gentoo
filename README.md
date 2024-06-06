@@ -58,7 +58,7 @@ sudo rm -rfv /usr/bin/apt-get
 
 ```
 usage: apt [--help] [-h?] ...
---help, -h, -?:      display help text
+-?, -h, --help:      display help text
 install:             install package
 remove, autoremove:  remove package
 show:                show details and information about a package
