@@ -22,7 +22,7 @@ emerge -n net-misc/curl app-editors/vim dev-python/colorama dev-lang/python
 Run these commands:
 
 ```
-cd /usr/bin
+cd /usr/local/bin
 sudo curl https://raw.githubusercontent.com/XRG2014/apt-for-gentoo/main/apt -o apt
 sudo curl https://raw.githubusercontent.com/XRG2014/apt-for-gentoo/main/apt -o apt-get
 sudo chmod +x apt
