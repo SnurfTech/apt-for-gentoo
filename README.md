@@ -16,7 +16,7 @@ A Python program, made for Gentoo Linux that uses emerge to install packages, bu
 Install dependencies:
 
 ```
-emerge -n curl vim dev-python/colorama python3
+emerge -n net-misc/curl app-editors/vim dev-python/colorama dev-lang/python
 ```
 
 Run these commands:
@@ -34,7 +34,7 @@ sudo chmod +x apt-get
 > Curl is no longer needed
 
 ```
-emerge -Cv curl
+emerge -Cv net-misc/curl
 ```
 
 ### Uninstall:
@@ -44,7 +44,7 @@ emerge -Cv curl
 > Assuming you don't have curl uninstalled (If you do, then just remove the phrase "curl" from the command below) 
 
 ```
-emerge -Cv curl vim dev-python/colorama python3
+emerge -Cv net-misc/curl app-editors/vim dev-python/colorama dev-lang/python
 ```
 
 Run these commands:
