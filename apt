@@ -7,7 +7,7 @@ n = len(sys.argv)
 
 def ht():
     print("usage: apt [--help] [-h?] ...")
-    print("--help, -h, -?:      display help text")
+    print("-?, -h, --help:      display help text")
     print("install:             install package")
     print("remove:              remove package")
     print("autoremove:          remove package, and if no additional arguments are given, autoremove will uninstall older versions of packages that already have newer versions installed")
