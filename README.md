@@ -11,15 +11,15 @@ This is a Python wrapper for Gentoo Linux's package manager, Emerge, but it has 
 - [Uninstall](/#uninstall)
 - [Help Text](/#help-text)
 
-## Install:
+## Install
 
-Install dependencies:
+Install dependencies
 
 ```
 emerge -n net-misc/curl app-editors/vim dev-python/colorama dev-lang/python
 ```
 
-Install APT:
+Install APT
 
 ```
 mkdir -p ~/.local/bin
@@ -35,7 +35,7 @@ echo 'export PATH=$PATH:~/.local/bin' >> ~/.profile
 
 > If you want, you can replace ```~/.profile``` with something like ```~/.bashrc```.
 
-(optional) Uninstall cURL:
+(optional) Uninstall cURL
 
 > cURL is no longer needed
 
@@ -43,9 +43,9 @@ echo 'export PATH=$PATH:~/.local/bin' >> ~/.profile
 emerge -Cv net-misc/curl
 ```
 
-## Uninstall:
+## Uninstall
 
-(optional) Uninstall dependencies:
+(optional) Uninstall dependencies
 
 > Assuming you didn't uninstall cURL after you finished installing APT. (If you did, then just remove the phrase "net-misc/curl" from the command below.) 
 
@@ -53,16 +53,16 @@ emerge -Cv net-misc/curl
 emerge -Cv net-misc/curl app-editors/vim dev-python/colorama dev-lang/python
 ```
 
-Run these commands:
+Run these commands
 
 ```
 rm -f ~/.local/bin/apt ~/.local/bin/apt-get
 ```
 
-### Help Text:
+## Help Text
 
 ```
-usage: apt [--help] [-h?] ...
+usage: apt-get [--help] [-h?] ...
 -?, -h, --help:      display help text
 install:             install package
 remove, autoremove:  remove package
