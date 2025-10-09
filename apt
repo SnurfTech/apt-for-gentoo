@@ -6,7 +6,7 @@ from colorama import Fore
 n = len(sys.argv)
 
 def ht():
-    print("usage: apt [--help] [-h?] ...")
+    print("usage: apt-get [--help] [-h?] ...")
     print("-?, -h, --help:      display help text")
     print("install:             install package")
     print("remove:              remove package")
