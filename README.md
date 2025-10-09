@@ -11,7 +11,7 @@ A Python program, made for Gentoo Linux that uses emerge to install packages, bu
 - [Uninstall](/#uninstall)
 - [Help Text](/#help-text)
 
-### Install:
+## Install:
 
 Install dependencies:
 
@@ -19,15 +19,21 @@ Install dependencies:
 emerge -n net-misc/curl app-editors/vim dev-python/colorama dev-lang/python
 ```
 
-Run these commands:
+Install APT:
 
 ```
-cd /usr/local/bin
-sudo curl https://raw.githubusercontent.com/XRG2014/apt-for-gentoo/main/apt -o apt
-sudo curl https://raw.githubusercontent.com/XRG2014/apt-for-gentoo/main/apt -o apt-get
-sudo chmod +x apt
-sudo chmod +x apt-get
+mkdir -p ~/.local/bin
+curl -L https://raw.githubusercontent.com/XRG2014/apt-for-gentoo/main/apt -o apt-get
+ln -s ~/.local/bin/apt-get ~/.local/bin/apt
+chmod +x ~/.local/bin
 ```
+
+Now, add ```~/.local/bin``` to your PATH environment variable if it is not already there.
+```
+echo 'export PATH=$PATH:~/.local/bin' >> ~/.profile
+```
+
+> If you want, you can replace ```~/.profile``` with something like ```~/.bashrc```.
 
 (optional) Uninstall cURL:
 
@@ -37,7 +43,7 @@ sudo chmod +x apt-get
 emerge -Cv net-misc/curl
 ```
 
-### Uninstall:
+## Uninstall:
 
 (optional) Uninstall dependencies:
 
@@ -50,8 +56,7 @@ emerge -Cv net-misc/curl app-editors/vim dev-python/colorama dev-lang/python
 Run these commands:
 
 ```
-sudo rm -rfv /usr/bin/apt
-sudo rm -rfv /usr/bin/apt-get
+rm -f ~/.local/bin/apt ~/.local/bin/apt-get
 ```
 
 ### Help Text:
