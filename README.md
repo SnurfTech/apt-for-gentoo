@@ -29,9 +29,9 @@ sudo chmod +x apt
 sudo chmod +x apt-get
 ```
 
-(optional) Uninstall curl:
+(optional) Uninstall cURL:
 
-> Curl is no longer needed
+> cURL is no longer needed
 
 ```
 emerge -Cv net-misc/curl
@@ -41,7 +41,7 @@ emerge -Cv net-misc/curl
 
 (optional) Uninstall dependencies:
 
-> Assuming you don't have curl uninstalled (If you do, then just remove the phrase "curl" from the command below) 
+> Assuming you didn't uninstall cURL after you finished installing APT. (If you did, then just remove the phrase "net-misc/curl" from the command below.) 
 
 ```
 emerge -Cv net-misc/curl app-editors/vim dev-python/colorama dev-lang/python
