@@ -1,5 +1,5 @@
 # APT for [Gentoo Linux](https://gentoo.org/)
-This is a Python wrapper for Gentoo Linux's package manager, Emerge, but it has an interface similar to Debian Linux's package manager, APT. 
+This is a Python wrapper for Gentoo Linux's package manager, Emerge, but with an interface similar to Debian Linux's package manager, APT. 
 
 > Currently doesn't support the -y or --assume-yes flags, but does include the "unmask" option, which allows you to unmask a package by using vim to open /etc/portage/package.accept_keywords (If you're unsure on how to use this option, then don't use it) 
 
