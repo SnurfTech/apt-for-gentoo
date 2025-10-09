@@ -5,7 +5,7 @@ This is a Python wrapper for Gentoo Linux's package manager, Emerge, but it has 
 
 > Please note that this is not an official release of APT, and that this program may not include every feature and some may be changed or tweaked
 
-## Table of Contents:
+## Table of Contents
 
 - [Install](/#install)
 - [Uninstall](/#uninstall)
